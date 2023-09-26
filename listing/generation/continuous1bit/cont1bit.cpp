@@ -15,15 +15,15 @@ int main () {
     int n, k;
     cin >> n >> k;
     int *a = new int[100];
-    int dem  = 0;
+    // int dem  = 0;
     init(a, n, k);
     while (!isFinal1(a, n ,k)) {
         display(a, n, k);
         genNext(a, n, k);
-        dem++;
-        if (dem == 2000) {
-            break;
-        }
+        // dem++;
+        // if (dem == 2000) {
+        //     break;
+        // }
     }
     display(a, n, k);
 
