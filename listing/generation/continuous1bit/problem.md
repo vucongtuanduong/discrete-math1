@@ -1,0 +1,1 @@
+List all binary strings of length n such that each binary string has exactly one sequence of k consecutive 1s.
