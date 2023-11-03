@@ -22,9 +22,9 @@ void init() {
         }
     }
     fopt = 1e9;
-
-
-    for (int i = 1; i <= n; i++) {
+    unused[1] = false;
+    x[1] = 1;
+    for (int i = 2; i <= n; i++) {
         unused[i] = true;
     }
 }
@@ -44,15 +44,15 @@ void update(int cost) {
             xopt[i] = x[i];
         }
     }
+    
 }
 void Try(int i) {
     for (int j = 1; j <= n; j++) {
-        if (unused[j]) {
+        if (unused[j] == true) {
             x[i] = j;
             unused[j] = false;
             if (i == n) {
-                int cost = totalCost();
-                update(cost);
+                update(totalCost());
             } else {
                 Try(i + 1);
             }
@@ -61,9 +61,14 @@ void Try(int i) {
     }
 }
 void display() {
+    // cout << fopt << endl;
+    // cout << xopt[n] << " " << xopt[1] << endl;
+    // cout << c[xopt[n]][xopt[1]] << endl;
+    // fopt += c[xopt[n]][xopt[1]];
+    xopt[n + 1] = xopt[1];//xopt[0
     cout << "\nChi phi toi uu: " << fopt << endl;
     cout << "Phuong an toi uu: ";
-    for (int i = 1; i <= n; i++) {
+    for (int i = 1; i <= n + 1; i++) {
         cout << xopt[i] << " ";
     }
 }
@@ -73,7 +78,7 @@ int main (){
     freopen("output.txt", "w", stdout);
     #endif
     init();
-    Try(1);
+    Try(2);
     display();
     return 0;
 }
