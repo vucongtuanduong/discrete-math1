@@ -1,3 +1,2 @@
-Nhap so luong thanh pho: Nhap ma tran chi phi: 
-Chi phi toi uu: 22
 Phuong an toi uu: 1 2 3 5 4 1 
+Chi phi toi uu: 22

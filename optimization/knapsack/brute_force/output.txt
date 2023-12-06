@@ -1,2 +1,2 @@
-1 0 1 
-Gia tri su dung toi uu: 180
+Phuong an toi uu: 1 0 1 
+Gia tri toi uu: 180
