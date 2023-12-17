@@ -8,26 +8,21 @@ void init() {
 }
 bool check() {
     int count1 = 0;
-    bool is1 = false;
     int res = 0;
+    int countDay = 0;
     for (int i = 1; i <= n; i++) {
-        if (np[i] == 1 && is1 == false) {
+        if (np[i] == 1) {
             count1 ++;
-            is1 = true;
             res = max(count1, res);
-        } else if (np[i] == 1 && is1 == true) {
-            count1++; 
-            res = max(count1, res);
-        } else if (np[i] == 0) {
+            if(count1 == k) {
+                countDay++;
+            }
+        } else{
             count1 = 0;
             res = max(count1, res);
         }
     }
-    if (res == k) {
-        return true;
-    } else {
-        return false;
-    }
+    return (res == k) && (countDay == 1);
 
 }
 void result() {
@@ -54,6 +49,7 @@ void Try(int i) {
 }
 int main () {
     freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
     init();
     Try(1);
 }
