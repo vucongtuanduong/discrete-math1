@@ -31,10 +31,9 @@ void init() {
 }
 int totalCost() {
     int res = 0;
-    for (int i = 1; i < n; i++) {
-        res += c[x[i]][x[i + 1]];
+    for (int i = 1; i <= n; i++) {
+        res += c[i][x[i]];
     }
-    res += c[x[n]][x[1]];
     return res;
     
 }
@@ -42,10 +41,9 @@ bool check() {
     int cost = totalCost();
     if (cost == k) {
         int j = 1;
-        for (int i = 1; i < n; i++) {
-            a[j++] = c[x[i]][x[i + 1]];
+        for (int i = 1; i <= n; i++) {
+            a[j++] = c[i][x[i]];
         }
-        a[j++] = c[x[n]][x[1]];
         return true;
     }  else {
         return false;
